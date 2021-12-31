@@ -1,5 +1,44 @@
 # Basic bash commands
 
+## Globbing and Extended Globbing
+
+Standard Globbing:
+
+* `*`	Match zero or more characters
+* `?`	Match any single character
+* `[...]`	Match any of the characters in a set
+
+Extended Globbing:
+
+* `?(patterns)`	Match zero or one occurrences of the patterns
+* `*(patterns)`	Match zero or more occurrences of the patterns
+* `+(patterns)`	Match one or more occurrences of the patterns
+* `@(patterns)`	Match one occurrence of the patterns
+* `!(patterns)`	Match anything that doesn't match one of the patterns
+
+Patterns can else be combined with `|`
+
+To enable extended globbing
+```shell
+# enable extended globbing
+$> shopt -s extglob
+
+# disable extended globbing
+$> shopt -u extglob
+
+# query if extended globbing is on
+$> shopt -q extglob
+$> echo $?
+```
+
+Example
+
+```shell
+# to match both `package.json` and `package-lock.json` (both examples work)
+$> ls @(package|package-lock).json
+$> ls package?(-lock).json
+```
+
 ## Test
 
 Full reference: https://www.computerhope.com/unix/bash/test.htm
