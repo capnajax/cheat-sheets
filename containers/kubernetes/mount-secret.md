@@ -34,5 +34,8 @@ Then create the volume. This config is a sibling to the containers config.
       volumes:
       - name: volume-name
         secret:
-          secretName: asset-sso
+          secretName: my-secret
+      - name: volume-name
+        configMap:
+          name: my-config-map
 ```

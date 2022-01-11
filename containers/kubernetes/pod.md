@@ -21,7 +21,7 @@ spec:
         ⋮
 ```
 
-Calling from within a container. All the necessary info is automatically mounted
+Calling from within a container. All the necessary info is automatically mounted/
 
 ```sh
 # Point to the internal API server hostname
